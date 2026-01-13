@@ -344,7 +344,9 @@ class Visualization3D(ttk.Frame):
         self.draw_grid()
 
         # Отрисовка контура целевых точек
-        glColor3f(1.0, 0.0, 0.0)  # Красный цвет для контура
+        glColor3f(1.0, 0.0, 0.0)
+        for point in self.target_points:
+            self.draw_sphere(point, 0.8)
 
         # Рисуем замкнутую линию контура
         if len(self.target_points) > 1:
